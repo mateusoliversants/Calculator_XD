@@ -1,52 +1,51 @@
-""" Calculadora com while """
 while True:
-    numero1 = input('Digite um número: ')
-    numero2 = input('Digite outro número: ')
+    number1 = input('Enter a number: ')
+    number2 = input('Enter another number: ')
 
 
-    numeros_validos = None
-    operadores_validos = '+-*/'
+    valid_numbers = None
+    valid_operators = '+-*/'
     num1_float = 0
     num2_float = 0
 
 
     try:
-        num1_float = float(numero1)
-        num2_float = float(numero2)
-        numeros_validos = True
+        num1_float = float(number1)
+        num2_float = float(number2)
+        valid_numbers = True
     except:
-        numeros_validos = None
+        valid_numbers = None
 
-    if numeros_validos is None:
-        print('Um ou ambos os números não são válidos')
+    if valid_numbers is None:
+        print('One or both numbers are not valid')
         continue
 
 
-    operador = input('Digite um operador(+ - * /): ')
-    if operador not in operadores_validos:
-        print('Operador inválido')
+    operator = input('Enter an operator(+ - * /): ')
+    if operator not in valid_operators:
+        print('Invalid operator')
         continue
-    if len(operador) > 1:
-        print('Digite apenas um operador')
+    if len(operator) > 1:
+        print('Enter only one operator')
         continue
 
 
     print('===' * 3)
-    print('Sua conta foi realizada. Confira o resultado abaixo: ')
-    if operador == '+':
-        print(f'{numero1} + {numero2} =', num1_float + num2_float)
-    elif operador == '-':
-        print(f'{numero1} - {numero2} =', num1_float - num2_float)
-    elif operador == '*':
-        print(f'{numero1} * {numero2} =', num1_float * num2_float)
-    elif operador == '/':
-        print(f'{numero1} / {numero2} =', num1_float / num2_float)
+    print('Your account has been processed. Check out the result below:')
+    if operator == '+':
+        print(f'{number1} + {number2} =', num1_float + num2_float)
+    elif operator == '-':
+        print(f'{number1} - {number2} =', num1_float - num2_float)
+    elif operator == '*':
+        print(f'{number1} * {number2} =', num1_float * num2_float)
+    elif operator == '/':
+        print(f'{number1} / {number2} =', num1_float / num2_float)
     else:
-        print('Isso nunca deveria acontecer wtfff')
+        print('This should never happen wtfff')
 
 
-    sair = input('Quer sair? [s]im: ').lower().startswith('s')
-    if sair is True:
+    exit = input('Exit? [y]es: ').lower().startswith('y')
+    if exit is True:
         break
 
-print('Acabou XD')
+print('Finished!')
